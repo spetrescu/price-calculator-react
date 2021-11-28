@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import FormTextInput from "./FormTextInput/FormTextInput";
 import { MathComponent } from "mathjax-react";
 import * as S from "./Main.styles";

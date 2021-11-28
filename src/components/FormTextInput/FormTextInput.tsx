@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './FormTextInput.styles'
 function FormTextInput(props:any ) {
     return(
