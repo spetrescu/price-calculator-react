@@ -68,7 +68,7 @@ function Main(props: any) {
 
         <h4> Formula</h4>
         <MathComponent
-          tex={String.raw`NET + AV + Comission\% * (NET+AV) \over (1-VAT)\%`}
+          tex={String.raw`NET + AV + Comission\% * (NET+AV) + TFC + TRC \over (1-VAT)\%`}
         />
       </S.ContainerFormula>
     </div>
