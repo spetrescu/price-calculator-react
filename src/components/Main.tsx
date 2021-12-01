@@ -1,6 +1,5 @@
 import  { useState,createContext,useEffect } from "react";
 import FormTextInput from "./FormTextInput/FormTextInput";
-import { MathComponent } from "mathjax-react";
 import * as S from "./Main.styles";
 export const DeviceContext=createContext(null);
 
@@ -80,14 +79,7 @@ useEffect(()=>{if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini
         <S.Price>Final price: {finalPrice || 'N/A'} </S.Price>
         <S.Commission>Commission amount: {agentCash || 'N/A'}</S.Commission>
 
-        <h4> Formula</h4>
-        <MathComponent
-            font-color = "white"
-            settings={{"font-color":"#ffffff"}}
-            width={'unset'}
-            height={'unset'}
-          tex={String.raw`NET + AV + Commission\% * (NET+AV) + TFC + TRC \over (1-VAT)\%`}
-        />
+
       </S.ContainerFormula>
       </DeviceContext.Provider>
     </div>

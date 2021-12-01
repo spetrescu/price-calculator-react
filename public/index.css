@@ -6,11 +6,14 @@ body{
     padding:0;
 }
 
-mjx-container[jax="SVG"][display="true"] {
-    display: flex!important;
-}
+/*mjx-container[jax="SVG"][display="true"] {*/
+/*    display: flex!important;*/
+/*}*/
 
-.mathjax > svg {
-    width: 90vw;
-    height: 100%;
-}
+/*.mathjax > svg {*/
+/*    color:white;*/
+/*    background-color:red;*/
+/*    fill:red;*/
+/*    width: 90vw;*/
+/*    height: 100%;*/
+/*}*/
