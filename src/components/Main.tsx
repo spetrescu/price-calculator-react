@@ -1,7 +1,7 @@
 import  { useState,createContext,useEffect,useRef } from "react";
 import FormTextInput from "./FormTextInput/FormTextInput";
 import * as S from "./Main.styles";
-import useIntersection from '../utilities/hooks/useIntersection'
+import {useIntersection} from '../utilities/hooks/useIntersection'
 
 export const DeviceContext=createContext(null);
 

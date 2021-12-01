@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default (element, rootMargin) => {
+export  const useIntersection = (element, rootMargin) => {
     const [isVisible, setState] = useState(false);
 
     useEffect(() => {
@@ -15,11 +15,13 @@ export default (element, rootMargin) => {
         );
 
         element.current && observer.observe(element.current);
+        const copy = element.current;
 
         return () => {
-            observer.unobserve(element.current);
+
+            observer.unobserve(copy);
         };
-    }, []);
+    }, [element,rootMargin]);
 
     return isVisible;
 };
