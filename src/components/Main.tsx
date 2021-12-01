@@ -90,8 +90,8 @@ useEffect(()=>{if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini
           <S.Submit type="submit" value="SUBMIT" />
         </form>
 
-        <S.Price ref={ref}>Final price: {finalPrice || 'N/A'} </S.Price>
-        <S.Commission>Commission amount: {agentCash || 'N/A'}</S.Commission>
+        <S.Price >Final price: {finalPrice || 'N/A'} </S.Price>
+        <S.Commission ref={ref}>Commission amount: {agentCash || 'N/A'}</S.Commission>
 
 
       </S.ContainerFormula>
