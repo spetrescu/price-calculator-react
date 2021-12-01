@@ -1,16 +1,22 @@
-import  { useState,createContext,useEffect } from "react";
+import  { useState,createContext,useEffect,useRef } from "react";
 import FormTextInput from "./FormTextInput/FormTextInput";
 import * as S from "./Main.styles";
+import useIntersection from '../utilities/hooks/useIntersection'
+
 export const DeviceContext=createContext(null);
 
 
 function Main(props: any) {
-   const [finalPrice, setFinalPrice] = useState<number>();
+  const ref = useRef();
+
+
+  const [finalPrice, setFinalPrice] = useState<number>();
 
    const [agentCash, setAgentCash] = useState<number>();
 
    const [mobileDevice,setMobileDevice ] = useState<boolean>();
 
+  const inViewport = useIntersection(ref, '0px'); // Trigger as soon as the element becomes visible
 
 useEffect(()=>{if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
   setMobileDevice(true);
@@ -41,6 +47,14 @@ useEffect(()=>{if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini
     setFinalPrice(Math.ceil(result));
     const agentMoney = (commission / 100) * (net + addedValue);
     setAgentCash(Math.ceil(agentMoney));
+
+
+    if (!inViewport) {
+      window.scrollTo(0,document.body.scrollHeight);
+
+      console.log('in viewport:', ref.current);
+    }
+    // window.scrollTo(0,document.body.scrollHeight);
   };
   return (
     <div>
@@ -76,7 +90,7 @@ useEffect(()=>{if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini
           <S.Submit type="submit" value="SUBMIT" />
         </form>
 
-        <S.Price>Final price: {finalPrice || 'N/A'} </S.Price>
+        <S.Price ref={ref}>Final price: {finalPrice || 'N/A'} </S.Price>
         <S.Commission>Commission amount: {agentCash || 'N/A'}</S.Commission>
 
 
