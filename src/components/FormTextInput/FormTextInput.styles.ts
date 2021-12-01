@@ -10,7 +10,7 @@ export const TextInput = styled.input<InputProps>`
   `}
   ${props => props.mobileDevice && css`
     width:100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
 
   `}
   ${props => !props.mobileDevice && css`
