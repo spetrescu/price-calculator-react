@@ -1,11 +1,15 @@
 import Main from './components/Main'
+import * as S from './App.styles'
 
 const App = () => {
+
     return (
-        <div>
-            <h1>Price calculator</h1>
+        <>
+        <S.App>
+            <S.Title>PRICE CALCULATOR</S.Title>
             <Main name="Stefan" />
-        </div>
+        </S.App>
+       </>
     )
 }
 
